@@ -8,15 +8,15 @@ from gr.aueb.utils.video_producer import Producer
 
 class Consumer(multiprocessing.Process):
     daemon = True
-    sync_topic = ""
+    __sync_topic = ""
 
     def __init__(self, sync_topic):
         multiprocessing.Process.__init__(self)
-        self.sync_topic = sync_topic
+        self.__sync_topic = sync_topic
 
     def run(self):
         consumer = KafkaConsumer(**cons_conf)
-        consumer.subscribe([self.sync_topic])
+        consumer.subscribe([self.__sync_topic])
         for msg in consumer:
             print("Message received from master producer \"" + bcolors.BOLD + msg.value +
                   bcolors.ENDC + "\"")
