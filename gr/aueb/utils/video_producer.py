@@ -7,14 +7,12 @@ class Producer(threading.Thread):
     config = {}
     topic = ""
     file = ""
-    thread_id = None
 
-    def __init__(self, config, topic, file, thread_id):
+    def __init__(self, config, topic, file):
         threading.Thread.__init__(self)
         self.config = config
         self.topic = topic
         self.file = file
-        self.thread_id = thread_id
 
     def run(self):
         video = cv2.VideoCapture(self.file)

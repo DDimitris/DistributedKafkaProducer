@@ -33,5 +33,4 @@ class Sync():
               "\" the message \"" + message + "\"" + bcolors.ENDC)
         producer.send(self.internal_sync_topic, key="Start".encode(), value=message.encode())
         print("Sync in progress...")
-        time.sleep(0.5)
         return (int(remote_producers), int(local_producers))
