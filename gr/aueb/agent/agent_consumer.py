@@ -1,5 +1,7 @@
 import multiprocessing
+
 from kafka import KafkaConsumer
+
 from gr.aueb.utils.colors import bcolors
 from gr.aueb.utils.kafka_configurations import agent_producer_configs as prod_conf
 from gr.aueb.utils.kafka_configurations import consumer_configs as cons_conf
