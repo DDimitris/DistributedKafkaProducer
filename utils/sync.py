@@ -1,6 +1,7 @@
-from gr.aueb.utils.kafka_configurations import master_producer_configs as prod_conf
-from kafka import KafkaProducer
 from gr.aueb.utils.colors import bcolors
+from kafka import KafkaProducer
+
+from utils.kafka_configurations import master_producer_configs as prod_conf
 
 
 class Sync:

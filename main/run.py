@@ -5,9 +5,10 @@ import time
 
 from gr.aueb.agent.agent_consumer import Consumer
 from gr.aueb.master.sync import Sync
-from gr.aueb.utils.kafka_configurations import internal_sync_topic
-from gr.aueb.utils.kafka_configurations import master_producer_configs as master_prod_conf
 from gr.aueb.utils.video_producer import Producer as VideoProducer
+
+from utils.kafka_configurations import internal_sync_topic
+from utils.kafka_configurations import master_producer_configs as master_prod_conf
 
 
 def main(argv):
