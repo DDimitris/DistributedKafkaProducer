@@ -61,7 +61,6 @@ def start_master_producer(topic, vfile, no_producers, machines, brokers):
     s = Sync(topic, internal_sync_topic, vfile, no_producers, machines, brokers)
     remote_producers, local_producers = s.synchronize()
     print("Total threads starting in master producer are " + str(int(local_producers)))
-    print("Start emitting...")
     producer_list = []
     for i in range(0, int(local_producers)):
         p = VideoProducer(master_prod_conf, topic, vfile)

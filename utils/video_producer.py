@@ -17,6 +17,7 @@ class Producer(threading.Thread):
     def run(self):
         video = cv2.VideoCapture(self.__file)
         producer = KafkaProducer(**self.__config)
+        print("Start Emitting...")
         while video.isOpened:
             success, image = video.read()
             if not success:
@@ -24,5 +25,6 @@ class Producer(threading.Thread):
             ret, jpeg = cv2.imencode('.png', image)
             producer.send(self.__topic, jpeg.tobytes())
             time.sleep(0.2)
+        print("Done Emitting!")
         producer.send(self.__topic, key="Done".encode(), value="Done".encode())
         video.release()
