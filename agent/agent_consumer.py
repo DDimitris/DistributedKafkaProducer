@@ -1,7 +1,7 @@
 import multiprocessing
 
-from gr.aueb.utils.colors import bcolors
-from gr.aueb.utils.video_producer import Producer
+from utils.colors import bcolors
+from utils.video_producer import Producer
 from kafka import KafkaConsumer
 
 from utils.kafka_configurations import agent_producer_configs as prod_conf
