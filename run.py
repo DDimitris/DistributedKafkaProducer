@@ -58,6 +58,8 @@ def start_agent_producer():
 
 
 def start_master_producer(topic, vfile, no_producers, machines, brokers):
+    signal.signal(signal.SIGINT, signal_handler)
+    signal.pause()
     s = Sync(topic, internal_sync_topic, vfile, no_producers, machines, brokers)
     remote_producers, local_producers = s.synchronize()
     print("Total threads starting in master producer are " + str(int(local_producers)))
