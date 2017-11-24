@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='KafkaDistributedClients',
     version='0.1',
-    packages=['gr', 'gr.aueb', 'gr.aueb.main', 'gr.aueb.sync', 'gr.aueb.agent', 'gr.aueb.utils', 'gr.aueb.master'],
+    packages=['agent', 'utils'],
     url='',
     license='',
     author='Dimitris Dedousis',
