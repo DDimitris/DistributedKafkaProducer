@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='KafkaDistributedClients',
@@ -8,5 +8,6 @@ setup(
     license='',
     author='Dimitris Dedousis',
     author_email='dimitris.dedousis@gmail.com',
-    description='A distributed producer for use with Apache Kafka', install_requires=["kafka-python", "cv2"]
+    description='A distributed producer for use with Apache Kafka',
+    install_requires=["kafka-python", "cv2"]
 )
